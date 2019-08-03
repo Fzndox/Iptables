@@ -1,0 +1,21 @@
+IPTABLES=/system/bin/iptables
+IP6TABLES=/system/bin/ip6tables
+$IPTABLES -A "afwall" -d 8.8.4.4 -j DROP
+$IPTABLES -A "afwall" -d 8.8.8.8 -j DROP
+$IPTABLES -A "afwall" -d 111.161.64.0/24 -j DROP
+$IPTABLES -A "afwall" -d 104.121.88.0/24 -j DROP
+$IPTABLES -A "afwall" -d 183.3.226.207 -j DROP
+$IPTABLES -A "afwall" -d 203.205.0.0/16 -j DROP
+$IPTABLES -A "afwall" -d 183.3.226.207 -j DROP
+$IPTABLES -A "afwall" -d 157.255.246.101 -j DROP
+$IPTABLES -A "afwall" -d 101.89.19.165 -j DROP
+$IPTABLES -A "afwall" -d 203.205.177.41 -j DROP
+$IPTABLES -A "afwall" -d 123.151.66.78 -j DROP
+$IPTABLES -A "afwall" -d 121.51.160.100 -j DROP
+$IPTABLES -A "afwall" -d 183.192.201.116 -j DROP
+$IPTABLES -A "afwall" -d 112.60.1.69 -j DROP
+$IPTABLES -A "afwall" -d 58.144.154.100 -j DROP
+$IPTABLES -A "afwall" -d 125.39.46.125 -j DROP
+$IPTABLES -A "afwall" -d 203.205.221.79 -j DROP
+$IPTABLES -A "afwall" -d 96.6.23.136 -j DROP
+$IPTABLES -A "afwall" -d 23.220.38.229 -j DROP
