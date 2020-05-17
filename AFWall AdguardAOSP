@@ -1,0 +1,14 @@
+IPTABLES=/system/bin/iptables
+IP6TABLES=/system/bin/ip6tables
+$IPTABLES -A "afwall" -d 8.8.4.4 -j DROP
+$IPTABLES -A "afwall" -d 8.8.8.8 -j DROP
+$IPTABLES -t nat -D OUTPUT -p tcp --dport 853 -j DNAT --to-destination 176.103.130.130:853 || true
+$IPTABLES -t nat -D OUTPUT -p udp --dport 853 -j DNAT --to-destination 176.103.130.130:853 || true
+$IPTABLES -t nat -I OUTPUT -p tcp --dport 853 -j DNAT --to-destination 176.103.130.130:853
+$IPTABLES -t nat -I OUTPUT -p udp --dport 853 -j DNAT --to-destination 176.103.130.130:853
+#Disabled removal router blocks ipv6 anyways
+#Set Android DNS to auto
+#$IP6TABLES -t nat -D OUTPUT -p tcp --dport 853 -j DNAT --to-destination 2a00:5a60::ad1:0ff || true
+#$IP6TABLES -t nat -D OUTPUT -p udp --dport 853 -j DNAT --to-destination 2a00:5a60::ad1:0ff || true
+$IP6TABLES -t nat -I OUTPUT -p tcp --dport 853 -j DNAT --to-destination 2a00:5a60::ad1:0ff
+$IP6TABLES -t nat -I OUTPUT -p udp --dport 853 -j DNAT --to-destination 2a00:5a60::ad1:0ff
